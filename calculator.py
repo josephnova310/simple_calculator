@@ -30,8 +30,9 @@ def calculator():
         print("3. Multiply")
         print("4. Divide")
         print("5. Square Root")
+        print("6. Power")
 
-        choice = input("Enter choice (0/1/2/3/4/5): ")
+        choice = input("Enter choice (0/1/2/3/4/5/6): ")
 
         if choice == '0':
             print("Exiting the calculator. Goodbye!")
@@ -58,6 +59,13 @@ def calculator():
                 print(f"The square root is: {square_root(num)}")
             except ValueError:
                 print("Invalid input! Please enter a numeriic value.")
+        elif choice == '6':
+            try:
+                base = float(input("Enter the base number: "))
+                exponent = float(input("Enter the exponent"))
+                print(f"The result is: {power(base, exponent)}")
+            except ValueError:
+                print("Invaild input! please enter numeric values.")
         else:
             print("Invalid choice! Please select a valid operation.")
 
