@@ -20,6 +20,11 @@ def square_root(x):
     else:
         return "error! Cannot calculate square root of a negative number."
 
+def logarithm(x, base):
+    if x > 0 and base > 0 and base != 1:
+        return math.log(x, base)
+    else:
+        return "Error ! Invalid input for logarithm."
 
 def calculator():
     while True:
@@ -31,8 +36,9 @@ def calculator():
         print("4. Divide")
         print("5. Square Root")
         print("6. Power")
+        print("7.Logarithm")
 
-        choice = input("Enter choice (0/1/2/3/4/5/6): ")
+        choice = input("Enter choice (0/1/2/3/4/5/6/7): ")
 
         if choice == '0':
             print("Exiting the calculator. Goodbye!")
@@ -62,10 +68,17 @@ def calculator():
         elif choice == '6':
             try:
                 base = float(input("Enter the base number: "))
-                exponent = float(input("Enter the exponent"))
+                exponent = float(input("Enter the exponent "))
                 print(f"The result is: {power(base, exponent)}")
             except ValueError:
                 print("Invaild input! please enter numeric values.")
+        elif choice == '7':
+            try:
+                num = float(input("Enter the number (x): "))
+                base = float(input("Enter the base "))
+                print(f"The result is: {logarithm(num, base)}")
+            except ValueError:
+                    print("Invalid input! Please enter numeric values.")
         else:
             print("Invalid choice! Please select a valid operation.")
 
