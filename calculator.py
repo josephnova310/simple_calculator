@@ -1,4 +1,4 @@
-
+import math 
 def add(x, y):
     return x + y
 
@@ -14,18 +14,26 @@ def divide(x, y):
     else:
         return "Error! Division by zero."
 
+def square_root(x):
+    if x >= 0:
+        return  math.sqrt(x)
+    else:
+        return "error! Cannot calculate square root of a negative number."
+
+
 def calculator():
     while True:
         print("\nSelect operation:")
+        print("0. Exit")
         print("1. Add")
         print("2. Subtract")
         print("3. Multiply")
         print("4. Divide")
-        print("5. Exit")
+        print("5. Square Root")
 
-        choice = input("Enter choice (1/2/3/4/5): ")
+        choice = input("Enter choice (0/1/2/3/4/5): ")
 
-        if choice == '5':
+        if choice == '0':
             print("Exiting the calculator. Goodbye!")
             break
 
@@ -44,6 +52,12 @@ def calculator():
                     print(f"The result is: {divide(num1, num2)}")
             except ValueError:
                 print("Invalid input! Please enter numeric values.")
+        elif choice == '5':
+            try:
+                num = float(input("Enter the number: "))
+                print(f"The square root is: {square_root(num)}")
+            except ValueError:
+                print("Invalid input! Please enter a numeriic value.")
         else:
             print("Invalid choice! Please select a valid operation.")
 
