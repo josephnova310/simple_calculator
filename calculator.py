@@ -20,6 +20,9 @@ def square_root(x):
     else:
         return "error! Cannot calculate square root of a negative number."
 
+def power(x, y):
+    return x ** y
+
 def logarithm(x, base):
     if x > 0 and base > 0 and base != 1:
         return math.log(x, base)
